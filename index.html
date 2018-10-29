@@ -85,8 +85,20 @@
 
     <body>
 
-		<img src="https://github.com/MartinChikov/MartinChikov.github.io/blob/master/Mystery1.png?raw=true" | alt="Mystery1" style="width:420px;height:300px;">
-		<br>
+		<div class="container">
+		<img src="https://i.imgur.com/YzBJOqP.png" | alt="Mystery1" style="width:420px;height:300px;">
+		<div class="bottom-left">Bottom Left</div>
+		<div class="top-left">Top Left</div>
+		<div class="top-right">Top Right</div>
+		<div class="bottom-right">Bottom Right</div>
+		<div class="centered">Centered</div>
+		</div>
+		.centered {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		}
         <div class="protected">
             <div class="protected__alert" data-id="alert">You took a wrong step</div>
             <div class="protected__content">
