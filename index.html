@@ -12,7 +12,6 @@
 	background: rgba(70, 130, 200, 0.5); margin: auto; padding: 50px;
 	text-align: center;
 }
-
 .lightbox {
 	zoom: 1.25;
 	position: fixed;
@@ -23,32 +22,26 @@
 	text-align: center;
 	margin: auto;
 }
-
 div.horizontal {
 	display: flex;
 	justify-content: center;
 	height: 100%;
 }
-
 div.vertical {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
 }
-
 ::-webkit-input-placeholder {
    text-align: center;
 }
-
 ::-moz-placeholder {  
    text-align: center;
 }
-
 :-ms-input-placeholder {  
    text-align: center;
 }
-
 .center {
 	zoom: 1;
 	display: flex;
@@ -67,8 +60,9 @@ div.vertical {
 				<div class="box">				
 					<img src="https://i.imgur.com/74y3Cnc.png" | alt="Mystery_1" width="50%" height="50%"> <br>
 					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="Answer" /> <br />
-					<button id="loginbutton" type="button" style="center">Enter</button>
-					<p id="wrongPassword" style="display: none">wrong password</p>
+					<button id="loginbutton" type="button" style="center">Enter</button> <br><br>
+					<em><font size="+1"><strong><style="center">(Make sure you type the answer using lowercase letters with spaces)</strong></font><br><br>
+					<p id="wrongPassword" style="display: none">Wrong password</p>
 				</div>
 			</div>
 		</div>
@@ -80,7 +74,6 @@ div.vertical {
 
 	<script type="text/javascript">
 	"use strict";
-
 	function loadPage(pwd) {
 		
 		var hash= pwd;
@@ -91,22 +84,18 @@ div.vertical {
 			url : url,
 			dataType : "html",
 			success : function(data) {
-
 				window.location= url;
-
 			},
 			error : function(xhr, ajaxOptions, thrownError) {
 			
-
 				parent.location.hash= hash;
-
 				//$("#wrongPassword").show();
-				$("#password").attr("placeholder","wrong password");
+				$("#password").attr("placeholder","Wrong password");
+				
 				$("#password").val("");
 			}
 		});
 	}
-
 	$("#loginbutton").on("click", function() {
 		loadPage($("#password").val());
 	});
